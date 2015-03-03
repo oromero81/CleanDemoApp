@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="character_view_title_with_description">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/margin_padding_S</item>
+        <item name="android:paddingRight">@dimen/margin_padding_S</item>
+        <item name="android:paddingTop">@dimen/margin_padding_XS</item>
+        <item name="android:paddingBottom">@dimen/margin_padding_XS</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Clean Demo App</string>
+    <string name="common_no_data_to_show">No data to show :(</string>
+    <string name="common_loading_data">Loading Data</string>
+
+    <string name="character_title_name">Name:</string>
+    <string name="character_title_mail">Mail:</string>
+    <string name="character_title_username">Username:</string>
+    <string name="character_title_password">Password:</string>
+    <string name="character_title_address">Address:</string>
+    <string name="character_title_phone">Phone:</string>
+    <string name="character_title_cell">Cell:</string>
+    <string name="character_title_birthday">Birthday:</string>
+</resources>
