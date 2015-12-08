@@ -13,7 +13,31 @@ buildscript {
 }
 
 allprojects {
+    ext {
+        configuration = [
+                compileSdkVersion: 23,
+                buildToolsVersion: "23.0.1",
+                applicationId    : "com.oromero.cleandemoapp",
+                minSdkVersion    : 15,
+                targetSdk        : 23,
+                versionCode      : 2,
+                versionName      : "2.0"
+        ]
+        // Android config
+
+        //Dependencies versions
+        libraries = [
+                butterKnifeVersion    : "6.0.0",
+                supportLibraryVersion : "23.1.0",
+                retrofitLibraryVersion: "1.8.0",
+                picassoLibraryVersion : "2.4.0",
+                daggerVersion         : "1.2.2",
+                eventbusVersion       : "2.4.0"
+        ]
+    }
+
     repositories {
         jcenter()
+        mavenCentral()
     }
 }
