@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.presentation.view;
+package com.oromero.cleandemoapp.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;

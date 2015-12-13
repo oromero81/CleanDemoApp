@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.presentation.view.people;
+package com.oromero.cleandemoapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import com.oromero.cleandemoapp.presentation.module.PeopleModule;
 import com.oromero.cleandemoapp.presentation.presenter.PeoplePresenter;
 import com.oromero.cleandemoapp.presentation.view.BaseFragment;
 import com.oromero.cleandemoapp.presentation.view.character.CharacterActivity;
+import com.oromero.cleandemoapp.presentation.view.people.PeoplePresenterView;
 
 import java.util.Arrays;
 import java.util.List;

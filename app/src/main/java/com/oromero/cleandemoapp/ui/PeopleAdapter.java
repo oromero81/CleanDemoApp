@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.presentation.view.people;
+package com.oromero.cleandemoapp.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;

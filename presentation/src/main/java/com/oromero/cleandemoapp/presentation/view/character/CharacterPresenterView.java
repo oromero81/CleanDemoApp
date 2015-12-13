@@ -8,5 +8,5 @@ import com.oromero.cleandemoapp.presentation.presenter.PresenterView;
  */
 public interface CharacterPresenterView extends PresenterView {
 
-    public void drawCharacter(CharacterPresentationModel presentationModel);
+    void drawCharacter(CharacterPresentationModel presentationModel);
 }

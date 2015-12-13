@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.presentation.view.character;
+package com.oromero.cleandemoapp.ui;
 
 
 import android.app.Fragment;
@@ -13,8 +13,8 @@ import com.oromero.cleandemoapp.R;
 import com.oromero.cleandemoapp.presentation.model.CharacterPresentationModel;
 import com.oromero.cleandemoapp.presentation.module.CharacterModule;
 import com.oromero.cleandemoapp.presentation.presenter.CharacterPresenter;
-import com.oromero.cleandemoapp.presentation.view.BaseFragment;
-import com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView;
+import com.oromero.cleandemoapp.presentation.view.character.CharacterPresenterView;
+import com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;

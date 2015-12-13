@@ -1,7 +1,6 @@
 package com.oromero.cleandemoapp.presentation.presenter;
 
-import com.oromero.cleandemoapp.presentation.CharacterPresentationCallback;
-import com.oromero.cleandemoapp.presentation.model.CharacterPresentationModel;
+import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
 import com.oromero.cleandemoapp.presentation.view.character.CharacterPresenterView;
 
 /**
@@ -20,26 +19,27 @@ public class CharacterPresenterImpl implements CharacterPresenter {
     @Override
     public void getCharacter(String id) {
         if (id != null && !id.isEmpty()) {
-            characterInteractor.getCharacter(id, characterPresentationCallback);
+            characterInteractor.setup(id);
+            characterInteractor.run();
             characterPresenterView.loading();
         } else {
             characterPresenterView.noData();
         }
     }
 
-    private CharacterPresentationCallback characterPresentationCallback = new CharacterPresentationCallback() {
-        @Override
-        public void onGetCharacterSuccess(CharacterPresentationModel presentationModel) {
-            if (presentationModel != null) {
-                characterPresenterView.drawCharacter(presentationModel);
-            } else {
-                characterPresenterView.noData();
-            }
-        }
-
-        @Override
-        public void onGetCharacterFail(String error) {
-            characterPresenterView.showMessage(error);
-        }
-    };
+//    private CharacterPresentationCallback characterPresentationCallback = new CharacterPresentationCallback() {
+//        @Override
+//        public void onGetCharacterSuccess(CharacterPresentationModel presentationModel) {
+//            if (presentationModel != null) {
+//                characterPresenterView.drawCharacter(presentationModel);
+//            } else {
+//                characterPresenterView.noData();
+//            }
+//        }
+//
+//        @Override
+//        public void onGetCharacterFail(String error) {
+//            characterPresenterView.showMessage(error);
+//        }
+//    };
 }

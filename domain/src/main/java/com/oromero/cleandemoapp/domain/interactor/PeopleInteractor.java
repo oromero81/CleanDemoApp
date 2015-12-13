@@ -10,12 +10,12 @@ import java.util.List;
 /**
  * Created by oromero on 03/03/15.
  */
-public class PeopleInteractorImpl implements Interactor {
+public class PeopleInteractor implements Interactor {
 
     private PeopleRepository peopleRepository;
     private PeoplePresentationMapper peoplePresentationMapper;
 
-    public PeopleInteractorImpl(PeopleRepository peopleRepository, PeoplePresentationMapper peoplePresentationMapper) {
+    public PeopleInteractor(PeopleRepository peopleRepository, PeoplePresentationMapper peoplePresentationMapper) {
         this.peopleRepository = peopleRepository;
         this.peoplePresentationMapper = peoplePresentationMapper;
     }

@@ -5,5 +5,5 @@ package com.oromero.cleandemoapp.presentation.presenter;
  */
 public interface CharacterPresenter {
 
-    public void getCharacter(String id);
+    void getCharacter(String id);
 }

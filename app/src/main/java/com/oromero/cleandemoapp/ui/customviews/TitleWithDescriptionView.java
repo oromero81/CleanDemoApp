@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.presentation.view.customviews;
+package com.oromero.cleandemoapp.ui.customviews;
 
 import android.content.Context;
 import android.util.AttributeSet;

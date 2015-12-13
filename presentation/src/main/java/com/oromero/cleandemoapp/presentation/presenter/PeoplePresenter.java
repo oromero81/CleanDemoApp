@@ -5,5 +5,5 @@ package com.oromero.cleandemoapp.presentation.presenter;
  */
 public interface PeoplePresenter {
 
-    public void populateList();
+    void populateList();
 }

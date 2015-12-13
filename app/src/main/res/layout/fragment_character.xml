@@ -23,37 +23,37 @@
                 android:scaleType="centerCrop"
                 android:layout_marginBottom="@dimen/margin_padding_S"/>
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/name_layout"
                 style="@style/character_view_title_with_description" />
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/mail_layout"
                 style="@style/character_view_title_with_description" />
 
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/username_layout"
                 style="@style/character_view_title_with_description" />
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/password_layout"
                 style="@style/character_view_title_with_description" />
 
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/address_layout"
                 style="@style/character_view_title_with_description" />
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/phone_layout"
                 style="@style/character_view_title_with_description" />
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/cell_layout"
                 style="@style/character_view_title_with_description" />
 
-            <com.oromero.cleandemoapp.presentation.view.customviews.TitleWithDescriptionView
+            <com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView
                 android:id="@+id/birthday_layout"
                 style="@style/character_view_title_with_description" />
         </LinearLayout>

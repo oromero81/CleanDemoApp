@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface PeoplePresenterView extends PresenterView {
 
-    public void drawList(List<PeoplePresentationModel>peoplePresentationModels);
+    void drawList(List<PeoplePresentationModel>peoplePresentationModels);
 }
