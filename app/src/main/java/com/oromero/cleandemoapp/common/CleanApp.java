@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.oromero.cleandemoapp.di.AppModule;
 import com.oromero.cleandemoapp.di.DataModule;
-import com.oromero.cleandemoapp.domain.module.DomainModule;
+import com.oromero.cleandemoapp.di.DomainModule;
 
 import java.util.Arrays;
 import java.util.List;

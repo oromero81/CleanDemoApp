@@ -1,16 +1,17 @@
-package com.oromero.cleandemoapp.domain.module;
+package com.oromero.cleandemoapp.di;
+
 
 import com.oromero.cleandemoapp.common.CleanApp;
-import com.oromero.cleandemoapp.data.module.DataModule;
 import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
 import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
-import com.oromero.cleandemoapp.domain.mapper.CharacterPresentationMapper;
-import com.oromero.cleandemoapp.domain.mapper.CharacterPresentationMapperImpl;
-import com.oromero.cleandemoapp.domain.mapper.PeoplePresentationMapper;
-import com.oromero.cleandemoapp.domain.mapper.PeoplePresentationMapperImpl;
+import com.oromero.cleandemoapp.presentation.mapper.CharacterPresentationMapper;
+import com.oromero.cleandemoapp.presentation.mapper.CharacterPresentationMapperImpl;
+import com.oromero.cleandemoapp.presentation.mapper.PeoplePresentationMapper;
+import com.oromero.cleandemoapp.presentation.mapper.PeoplePresentationMapperImpl;
 
 import dagger.Module;
 import dagger.Provides;
+
 
 /**
  * Created by oromero on 02/03/15.

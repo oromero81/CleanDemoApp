@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.domain.mapper;
+package com.oromero.cleandemoapp.presentation.mapper;
 
 import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.presentation.model.CharacterPresentationModel;
@@ -7,16 +7,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 /**
  * Created by oromero on 03/03/15.
  */
 public class CharacterPresentationMapperImpl implements CharacterPresentationMapper {
-
-    @Inject
-    public CharacterPresentationMapperImpl() {
-    }
 
     @Override
     public CharacterPresentationModel transform(Character dataModel) {
