@@ -1,10 +1,11 @@
 package com.oromero.cleandemoapp.di;
 
+import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
 import com.oromero.cleandemoapp.domain.module.DomainModule;
 import com.oromero.cleandemoapp.presentation.presenter.CharacterPresenter;
 import com.oromero.cleandemoapp.presentation.presenter.CharacterPresenterImpl;
-import com.oromero.cleandemoapp.ui.CharacterFragment;
 import com.oromero.cleandemoapp.presentation.view.character.CharacterPresenterView;
+import com.oromero.cleandemoapp.ui.CharacterFragment;
 
 import dagger.Module;
 import dagger.Provides;

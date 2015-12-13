@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.oromero.cleandemoapp.R;
+import com.oromero.cleandemoapp.di.CharacterModule;
 import com.oromero.cleandemoapp.presentation.model.CharacterPresentationModel;
-import com.oromero.cleandemoapp.presentation.module.CharacterModule;
 import com.oromero.cleandemoapp.presentation.presenter.CharacterPresenter;
 import com.oromero.cleandemoapp.presentation.view.character.CharacterPresenterView;
 import com.oromero.cleandemoapp.ui.customviews.TitleWithDescriptionView;

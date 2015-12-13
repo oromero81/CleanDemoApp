@@ -3,7 +3,6 @@ package com.oromero.cleandemoapp.ui;
 import android.os.Bundle;
 
 import com.oromero.cleandemoapp.R;
-import com.oromero.cleandemoapp.presentation.view.BaseActivity;
 
 
 public class PeopleActivity extends BaseActivity {

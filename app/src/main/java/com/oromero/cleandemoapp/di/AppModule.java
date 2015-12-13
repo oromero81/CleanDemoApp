@@ -1,6 +1,8 @@
-package com.oromero.cleandemoapp.common;
+package com.oromero.cleandemoapp.di;
 
 import android.content.Context;
+
+import com.oromero.cleandemoapp.common.CleanApp;
 
 import dagger.Module;
 import dagger.Provides;

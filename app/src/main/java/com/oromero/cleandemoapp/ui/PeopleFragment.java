@@ -10,11 +10,9 @@ import android.widget.ListView;
 import android.widget.ViewFlipper;
 
 import com.oromero.cleandemoapp.R;
+import com.oromero.cleandemoapp.di.PeopleModule;
 import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
-import com.oromero.cleandemoapp.presentation.module.PeopleModule;
 import com.oromero.cleandemoapp.presentation.presenter.PeoplePresenter;
-import com.oromero.cleandemoapp.presentation.view.BaseFragment;
-import com.oromero.cleandemoapp.presentation.view.character.CharacterActivity;
 import com.oromero.cleandemoapp.presentation.view.people.PeoplePresenterView;
 
 import java.util.Arrays;
