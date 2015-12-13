@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.data.model;
+package com.oromero.cleandemoapp.domain.entities;
 
 import java.util.Date;
 

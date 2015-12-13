@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.domain.callback;
 
-import com.oromero.cleandemoapp.data.model.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
 
 import java.util.List;
 

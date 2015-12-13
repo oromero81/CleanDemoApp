@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.domain.interactor;
 
-import com.oromero.cleandemoapp.data.model.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
 import com.oromero.cleandemoapp.domain.callback.CharacterDataCallback;
 import com.oromero.cleandemoapp.domain.callback.CharacterPresentationCallback;
 import com.oromero.cleandemoapp.domain.mapper.CharacterPresentationMapper;

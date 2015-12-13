@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.data.mapper;
 
-import com.oromero.cleandemoapp.data.model.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
 import com.oromero.cleandemoapp.data.model.bean.ResultBean;
 
 import java.util.ArrayList;
