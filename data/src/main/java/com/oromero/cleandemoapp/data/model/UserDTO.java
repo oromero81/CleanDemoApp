@@ -1,13 +1,13 @@
-package com.oromero.cleandemoapp.data.model.bean;
+package com.oromero.cleandemoapp.data.model;
 
 /**
  * Created by oromero on 02/03/15.
  */
-public class UserBean {
+public class UserDTO {
 
     private String gender;
-    private NameBean name;
-    private LocationBean location;
+    private NameDTO name;
+    private LocationDTO location;
     private String email;
     private String username;
     private String password;
@@ -31,19 +31,19 @@ public class UserBean {
         this.gender = gender;
     }
 
-    public NameBean getName() {
+    public NameDTO getName() {
         return name;
     }
 
-    public void setName(NameBean name) {
+    public void setName(NameDTO name) {
         this.name = name;
     }
 
-    public LocationBean getLocation() {
+    public LocationDTO getLocation() {
         return location;
     }
 
-    public void setLocation(LocationBean location) {
+    public void setLocation(LocationDTO location) {
         this.location = location;
     }
 

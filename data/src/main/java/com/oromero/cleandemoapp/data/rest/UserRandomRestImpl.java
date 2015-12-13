@@ -2,11 +2,7 @@ package com.oromero.cleandemoapp.data.rest;
 
 import com.google.gson.Gson;
 import com.oromero.cleandemoapp.data.mapper.UserBeanMapper;
-import com.oromero.cleandemoapp.data.model.bean.ResponseBean;
-import com.oromero.cleandemoapp.domain.callback.CharacterDataCallback;
-import com.oromero.cleandemoapp.domain.callback.PeopleDataCallback;
-
-import javax.inject.Inject;
+import com.oromero.cleandemoapp.data.model.ResponseDTO;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -22,38 +18,41 @@ public class UserRandomRestImpl implements UserRandomRest {
     private static final String ENDPOINT = "http://api.randomuser.me";
     private static final int RESULTS = 100;
 
-    @Inject
-    UserBeanMapper userBeanMapper;
+    private UserBeanMapper userBeanMapper;
+
+    public UserRandomRestImpl(UserBeanMapper userBeanMapper) {
+        this.userBeanMapper = userBeanMapper;
+    }
 
     @Override
-    public void getPeople(final PeopleDataCallback peopleDataCallback) {
+    public void getPeople() {
         RandomUserApi client = getClient();
 
-        client.getPeople(RESULTS, new Callback<ResponseBean>() {
+        client.getPeople(RESULTS, new Callback<ResponseDTO>() {
             @Override
-            public void success(ResponseBean responseBean, Response response) {
-                peopleDataCallback.onGetPeopleSuccess(userBeanMapper.transform(responseBean.getResults()));
+            public void success(ResponseDTO responseDTO, Response response) {
+//                peopleDataCallback.onGetPeopleSuccess(userBeanMapper.transform(responseDTO.getResults()));
             }
 
             @Override
             public void failure(RetrofitError error) {
-                peopleDataCallback.onGetPeopleFailed(error.getMessage());
+//                peopleDataCallback.onGetPeopleFailed(error.getMessage());
             }
         });
     }
 
     @Override
-    public void getCharacter(String id, final CharacterDataCallback characterDataCallback) {
+    public void getCharacter(String id) {
         RandomUserApi client = getClient();
-        client.getCharacter(id, new Callback<ResponseBean>() {
+        client.getCharacter(id, new Callback<ResponseDTO>() {
             @Override
-            public void success(ResponseBean responseBean, Response response) {
-                characterDataCallback.onGetCharacterSuccess(userBeanMapper.transform(responseBean.getResults().get(0)));
+            public void success(ResponseDTO responseDTO, Response response) {
+//                characterDataCallback.onGetCharacterSuccess(userBeanMapper.transform(responseDTO.getResults().get(0)));
             }
 
             @Override
             public void failure(RetrofitError error) {
-                characterDataCallback.onGetChareacterFailed(error.getMessage());
+//                characterDataCallback.onGetChareacterFailed(error.getMessage());
             }
         });
     }

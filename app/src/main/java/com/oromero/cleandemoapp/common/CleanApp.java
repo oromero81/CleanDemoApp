@@ -2,7 +2,7 @@ package com.oromero.cleandemoapp.common;
 
 import android.app.Application;
 
-import com.oromero.cleandemoapp.data.module.DataModule;
+import com.oromero.cleandemoapp.di.DataModule;
 import com.oromero.cleandemoapp.domain.module.DomainModule;
 
 import java.util.Arrays;

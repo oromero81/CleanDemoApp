@@ -1,9 +1,9 @@
-package com.oromero.cleandemoapp.data.model.bean;
+package com.oromero.cleandemoapp.data.model;
 
 /**
  * Created by oromero on 02/03/15.
  */
-public class NameBean {
+public class NameDTO {
 
     private String title;
     private String first;

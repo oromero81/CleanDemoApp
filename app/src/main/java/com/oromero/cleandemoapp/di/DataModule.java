@@ -1,4 +1,4 @@
-package com.oromero.cleandemoapp.data.module;
+package com.oromero.cleandemoapp.di;
 
 import com.oromero.cleandemoapp.common.CleanApp;
 import com.oromero.cleandemoapp.data.mapper.UserBeanMapper;

@@ -1,25 +1,19 @@
 package com.oromero.cleandemoapp.data.mapper;
 
+import com.oromero.cleandemoapp.data.model.ResultDTO;
 import com.oromero.cleandemoapp.domain.entities.Character;
-import com.oromero.cleandemoapp.data.model.bean.ResultBean;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import javax.inject.Inject;
 
 /**
  * Created by oromero on 02/03/15.
  */
 public class UserBeanMapperImpl implements UserBeanMapper {
 
-    @Inject
-    public UserBeanMapperImpl() {
-    }
-
     @Override
-    public Character transform(ResultBean bean) {
+    public Character transform(ResultDTO bean) {
         if (bean == null) {
             throw new IllegalArgumentException("Cannot transform a null value");
         }
@@ -46,12 +40,12 @@ public class UserBeanMapperImpl implements UserBeanMapper {
     }
 
     @Override
-    public List<Character> transform(List<ResultBean> beans) {
+    public List<Character> transform(List<ResultDTO> beans) {
         List<Character> characters = new ArrayList<>();
 
         if (beans != null && !beans.isEmpty()) {
-            for (ResultBean resultBean : beans) {
-                characters.add(transform(resultBean));
+            for (ResultDTO resultDTO : beans) {
+                characters.add(transform(resultDTO));
             }
         }
 

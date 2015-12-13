@@ -1,14 +1,11 @@
 package com.oromero.cleandemoapp.data.rest;
 
-import com.oromero.cleandemoapp.domain.callback.CharacterDataCallback;
-import com.oromero.cleandemoapp.domain.callback.PeopleDataCallback;
-
 /**
  * Created by oromero on 02/03/15.
  */
 public interface UserRandomRest {
 
-    public void getPeople(PeopleDataCallback peopleDataCallback);
+    void getPeople();
 
-    public void getCharacter(String id, CharacterDataCallback characterDataCallback);
+    void getCharacter(String id);
 }
