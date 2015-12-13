@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.domain.mapper;
 
-import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class PeoplePresentationMapperImpl implements PeoplePresentationMapper {
     }
 
     @Override
-    public PeoplePresentationModel transform(CharacterDataModel dataModel) {
+    public PeoplePresentationModel transform(Character dataModel) {
         if (dataModel == null) {
             throw new IllegalArgumentException("Cannot transform a null value");
         }
@@ -33,11 +33,11 @@ public class PeoplePresentationMapperImpl implements PeoplePresentationMapper {
     }
 
     @Override
-    public List<PeoplePresentationModel> transform(List<CharacterDataModel> dataModels) {
+    public List<PeoplePresentationModel> transform(List<Character> dataModels) {
         List<PeoplePresentationModel> peoplePresentationModels = new ArrayList<>();
 
         if (dataModels != null && !dataModels.isEmpty()) {
-            for (CharacterDataModel dataModel : dataModels) {
+            for (Character dataModel : dataModels) {
                 peoplePresentationModels.add(transform(dataModel));
             }
         }

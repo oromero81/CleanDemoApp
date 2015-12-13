@@ -3,8 +3,6 @@ package com.oromero.cleandemoapp.domain.module;
 import com.oromero.cleandemoapp.common.CleanApp;
 import com.oromero.cleandemoapp.data.module.DataModule;
 import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
-import com.oromero.cleandemoapp.domain.interactor.CharacterInteractorImpl;
-import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
 import com.oromero.cleandemoapp.domain.interactor.PeopleInteractorImpl;
 import com.oromero.cleandemoapp.domain.mapper.CharacterPresentationMapper;
 import com.oromero.cleandemoapp.domain.mapper.CharacterPresentationMapperImpl;
@@ -31,7 +29,7 @@ public class DomainModule {
     }
 
     @Provides
-    public CharacterInteractor provideCharacterInteractor(CharacterInteractorImpl characterInteractor) {
+    public CharacterInteractor provideCharacterInteractor(CharacterInteractor characterInteractor) {
         return characterInteractor;
     }
 

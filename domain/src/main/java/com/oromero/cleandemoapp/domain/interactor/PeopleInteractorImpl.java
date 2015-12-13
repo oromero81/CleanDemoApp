@@ -1,42 +1,39 @@
 package com.oromero.cleandemoapp.domain.interactor;
 
-import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
 import com.oromero.cleandemoapp.domain.callback.PeopleDataCallback;
-import com.oromero.cleandemoapp.domain.callback.PeoplePresentationCallback;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.domain.mapper.PeoplePresentationMapper;
 import com.oromero.cleandemoapp.domain.repository.PeopleRepository;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 /**
  * Created by oromero on 03/03/15.
  */
-public class PeopleInteractorImpl implements PeopleInteractor {
+public class PeopleInteractorImpl implements Interactor {
 
-    @Inject
-    PeopleRepository peopleRepository;
-    @Inject
-    PeoplePresentationMapper peoplePresentationMapper;
+    private PeopleRepository peopleRepository;
+    private PeoplePresentationMapper peoplePresentationMapper;
 
-    PeoplePresentationCallback peoplePresentationCallback;
-
-    @Override
-    public void getPeople(PeoplePresentationCallback peoplePresentationCallback) {
-        this.peoplePresentationCallback = peoplePresentationCallback;
-        peopleRepository.getPeople(peopleDataCallback);
+    public PeopleInteractorImpl(PeopleRepository peopleRepository, PeoplePresentationMapper peoplePresentationMapper) {
+        this.peopleRepository = peopleRepository;
+        this.peoplePresentationMapper = peoplePresentationMapper;
     }
 
     private PeopleDataCallback peopleDataCallback = new PeopleDataCallback() {
         @Override
-        public void onGetPeopleSuccess(List<CharacterDataModel> characterDataModels) {
-            peoplePresentationCallback.onGetPeopleSuccess(peoplePresentationMapper.transform(characterDataModels));
+        public void onGetPeopleSuccess(List<Character> characters) {
+//            peoplePresentationCallback.onGetPeopleSuccess(peoplePresentationMapper.transform(characters));
         }
 
         @Override
         public void onGetPeopleFailed(String error) {
-            peoplePresentationCallback.onGetPeopleFail(error);
+//            peoplePresentationCallback.onGetPeopleFail(error);
         }
     };
+
+    @Override
+    public void run() {
+        peopleRepository.getPeople(peopleDataCallback);
+    }
 }

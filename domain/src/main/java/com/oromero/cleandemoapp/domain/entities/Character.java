@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by oromero on 02/03/15.
  */
-public class CharacterDataModel {
+public class Character {
 
     private String id;
     private String firstName;

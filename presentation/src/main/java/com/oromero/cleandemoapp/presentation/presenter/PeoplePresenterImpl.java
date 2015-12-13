@@ -1,7 +1,6 @@
 package com.oromero.cleandemoapp.presentation.presenter;
 
 import com.oromero.cleandemoapp.presentation.PeoplePresentationCallback;
-import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
 import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
 import com.oromero.cleandemoapp.presentation.view.people.PeoplePresenterView;
 

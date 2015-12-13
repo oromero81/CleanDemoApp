@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.domain.mapper;
 
-import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
 
 import java.util.List;
@@ -10,8 +10,8 @@ import java.util.List;
  */
 public interface PeoplePresentationMapper {
 
-    public PeoplePresentationModel transform(CharacterDataModel dataModel);
+    public PeoplePresentationModel transform(Character dataModel);
 
-    public List<PeoplePresentationModel> transform(List<CharacterDataModel> dataModels);
+    public List<PeoplePresentationModel> transform(List<Character> dataModels);
 
 }

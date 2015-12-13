@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.data.mapper;
 
-import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.data.model.bean.ResultBean;
 
 import java.util.ArrayList;
@@ -19,42 +19,42 @@ public class UserBeanMapperImpl implements UserBeanMapper {
     }
 
     @Override
-    public CharacterDataModel transform(ResultBean bean) {
+    public Character transform(ResultBean bean) {
         if (bean == null) {
             throw new IllegalArgumentException("Cannot transform a null value");
         }
 
-        CharacterDataModel characterDataModel = new CharacterDataModel();
+        Character character = new Character();
 
-        characterDataModel.setId(bean.getSeed());
-        characterDataModel.setFirstName(bean.getUser().getName().getFirst());
-        characterDataModel.setLastName(bean.getUser().getName().getLast());
-        characterDataModel.setGender(bean.getUser().getGender());
-        characterDataModel.setStreet(bean.getUser().getLocation().getStreet());
-        characterDataModel.setCity(bean.getUser().getLocation().getCity());
-        characterDataModel.setZip(bean.getUser().getLocation().getZip());
-        characterDataModel.setMail(bean.getUser().getEmail());
-        characterDataModel.setUsername(bean.getUser().getUsername());
-        characterDataModel.setPassword(bean.getUser().getPassword());
-        characterDataModel.setBirthday(new Date(Long.valueOf(bean.getUser().getDob()) * 1000));
-        characterDataModel.setPhone(bean.getUser().getPhone());
-        characterDataModel.setCell(bean.getUser().getCell());
-        characterDataModel.setPhotoLarge(bean.getUser().getPicture());
-        characterDataModel.setPhotoThumb(bean.getUser().getPicture().replace("http://api.randomuser.me/portraits/", "http://api.randomuser.me/portraits/med/"));
+        character.setId(bean.getSeed());
+        character.setFirstName(bean.getUser().getName().getFirst());
+        character.setLastName(bean.getUser().getName().getLast());
+        character.setGender(bean.getUser().getGender());
+        character.setStreet(bean.getUser().getLocation().getStreet());
+        character.setCity(bean.getUser().getLocation().getCity());
+        character.setZip(bean.getUser().getLocation().getZip());
+        character.setMail(bean.getUser().getEmail());
+        character.setUsername(bean.getUser().getUsername());
+        character.setPassword(bean.getUser().getPassword());
+        character.setBirthday(new Date(Long.valueOf(bean.getUser().getDob()) * 1000));
+        character.setPhone(bean.getUser().getPhone());
+        character.setCell(bean.getUser().getCell());
+        character.setPhotoLarge(bean.getUser().getPicture());
+        character.setPhotoThumb(bean.getUser().getPicture().replace("http://api.randomuser.me/portraits/", "http://api.randomuser.me/portraits/med/"));
 
-        return characterDataModel;
+        return character;
     }
 
     @Override
-    public List<CharacterDataModel> transform(List<ResultBean> beans) {
-        List<CharacterDataModel> characterDataModels = new ArrayList<>();
+    public List<Character> transform(List<ResultBean> beans) {
+        List<Character> characters = new ArrayList<>();
 
         if (beans != null && !beans.isEmpty()) {
             for (ResultBean resultBean : beans) {
-                characterDataModels.add(transform(resultBean));
+                characters.add(transform(resultBean));
             }
         }
 
-        return characterDataModels;
+        return characters;
     }
 }

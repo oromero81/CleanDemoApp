@@ -1,6 +1,5 @@
 package com.oromero.cleandemoapp.presentation.module;
 
-import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
 import com.oromero.cleandemoapp.domain.module.DomainModule;
 import com.oromero.cleandemoapp.presentation.presenter.CharacterPresenter;
 import com.oromero.cleandemoapp.presentation.presenter.CharacterPresenterImpl;

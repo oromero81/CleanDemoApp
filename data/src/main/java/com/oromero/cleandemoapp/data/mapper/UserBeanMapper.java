@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.data.mapper;
 
-import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.data.model.bean.ResultBean;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface UserBeanMapper {
 
-    public CharacterDataModel transform(ResultBean bean);
+    public Character transform(ResultBean bean);
 
-    public List<CharacterDataModel> transform(List<ResultBean> beans);
+    public List<Character> transform(List<ResultBean> beans);
 }

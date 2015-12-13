@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.domain.mapper;
 
-import com.oromero.cleandemoapp.domain.entities.CharacterDataModel;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.presentation.model.CharacterPresentationModel;
 
 import java.text.SimpleDateFormat;
@@ -19,7 +19,7 @@ public class CharacterPresentationMapperImpl implements CharacterPresentationMap
     }
 
     @Override
-    public CharacterPresentationModel transform(CharacterDataModel dataModel) {
+    public CharacterPresentationModel transform(Character dataModel) {
         if (dataModel == null) {
             throw new IllegalArgumentException("Cannot transform a null value");
         }
@@ -39,11 +39,11 @@ public class CharacterPresentationMapperImpl implements CharacterPresentationMap
     }
 
     @Override
-    public List<CharacterPresentationModel> transform(List<CharacterDataModel> dataModels) {
+    public List<CharacterPresentationModel> transform(List<Character> dataModels) {
         List<CharacterPresentationModel> characterPresentationModels = new ArrayList<>();
 
         if (dataModels != null && !dataModels.isEmpty()) {
-            for (CharacterDataModel dataModel : dataModels) {
+            for (Character dataModel : dataModels) {
                 characterPresentationModels.add(transform(dataModel));
             }
         }
