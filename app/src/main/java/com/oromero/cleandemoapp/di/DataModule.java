@@ -1,6 +1,5 @@
 package com.oromero.cleandemoapp.di;
 
-import com.oromero.cleandemoapp.common.CleanApp;
 import com.oromero.cleandemoapp.data.mapper.UserBeanMapper;
 import com.oromero.cleandemoapp.data.mapper.UserBeanMapperImpl;
 import com.oromero.cleandemoapp.data.repository.CharacterRepositoryImpl;
@@ -16,27 +15,29 @@ import dagger.Provides;
 /**
  * Created by oromero on 02/03/15.
  */
-@Module(injects = CleanApp.class, library = true, complete = false)
+@Module(
+        complete = false,
+        library = true
+)
 public class DataModule {
 
     @Provides
-    public UserBeanMapper provideUserBeanMapper(UserBeanMapperImpl userBeanMapper) {
-        return userBeanMapper;
+    public UserBeanMapper provideUserBeanMapper() {
+        return new UserBeanMapperImpl();
     }
 
     @Provides
-    public UserRandomRest provideUserRandomRest(UserRandomRestImpl userRandomRest) {
-        return userRandomRest;
+    public UserRandomRest provideUserRandomRest(UserBeanMapper userBeanMapper) {
+        return new UserRandomRestImpl(userBeanMapper);
     }
 
     @Provides
-    public PeopleRepository providePeopleRepository(PeopleRepositoryImpl peopleRepository) {
-        return peopleRepository;
+    public PeopleRepository providePeopleRepository(UserRandomRest userRandomRest) {
+        return new PeopleRepositoryImpl(userRandomRest);
     }
 
     @Provides
-    public CharacterRepository provideCharacterRepository(CharacterRepositoryImpl characterRepository){
-        return characterRepository;
+    public CharacterRepository provideCharacterRepository(UserRandomRest userRandomRest) {
+        return new CharacterRepositoryImpl(userRandomRest);
     }
-
 }

@@ -10,7 +10,13 @@ import dagger.Provides;
 /**
  * Created by oromero on 02/03/15.
  */
-@Module(injects = {CleanApp.class}, library = true)
+@Module(
+        includes = {
+                DataModule.class, UiModule.class, DomainModule.class, PresentationModule.class
+        },
+        injects = CleanApp.class,
+        library = true
+)
 public class AppModule {
     private CleanApp cleanApp;
 

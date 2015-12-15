@@ -3,11 +3,6 @@ package com.oromero.cleandemoapp.common;
 import android.app.Application;
 
 import com.oromero.cleandemoapp.di.AppModule;
-import com.oromero.cleandemoapp.di.DataModule;
-import com.oromero.cleandemoapp.di.DomainModule;
-
-import java.util.Arrays;
-import java.util.List;
 
 import dagger.ObjectGraph;
 
@@ -21,15 +16,23 @@ public class CleanApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        objectGraph = ObjectGraph.create(getModules().toArray());
-        objectGraph.inject(this);
+        initObjectGraph();
     }
 
-    private List<Object> getModules() {
-        return Arrays.<Object>asList(new AppModule(this), new DomainModule(), new DataModule());
+    private void initObjectGraph() {
+        objectGraph = ObjectGraph.create(new AppModule(this));
+        inject(this);
+    }
+
+    public void inject(Object object) {
+        objectGraph.inject(object);
     }
 
     public ObjectGraph createScopedGraph(Object... modules) {
         return objectGraph.plus(modules);
+    }
+
+    public ObjectGraph getGraph() {
+        return objectGraph;
     }
 }

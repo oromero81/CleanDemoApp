@@ -1,9 +1,10 @@
 package com.oromero.cleandemoapp.di;
 
 
-import com.oromero.cleandemoapp.common.CleanApp;
 import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
 import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
+import com.oromero.cleandemoapp.domain.repository.CharacterRepository;
+import com.oromero.cleandemoapp.domain.repository.PeopleRepository;
 import com.oromero.cleandemoapp.presentation.mapper.CharacterPresentationMapper;
 import com.oromero.cleandemoapp.presentation.mapper.CharacterPresentationMapperImpl;
 import com.oromero.cleandemoapp.presentation.mapper.PeoplePresentationMapper;
@@ -16,26 +17,29 @@ import dagger.Provides;
 /**
  * Created by oromero on 02/03/15.
  */
-@Module(injects = CleanApp.class, library = true, includes = DataModule.class)
+@Module(
+        complete = false,
+        library = true
+)
 public class DomainModule {
 
     @Provides
-    public PeopleInteractor providePeopleInteractor(PeopleInteractor peopleInteractor) {
-        return peopleInteractor;
+    public PeopleInteractor providePeopleInteractor(PeopleRepository peopleRepository) {
+        return new PeopleInteractor(peopleRepository);
     }
 
     @Provides
-    public PeoplePresentationMapper providePeoplePresentationMapper(PeoplePresentationMapperImpl peoplePresentationMapper) {
-        return peoplePresentationMapper;
+    public PeoplePresentationMapper providePeoplePresentationMapper(){
+        return new PeoplePresentationMapperImpl();
     }
 
     @Provides
-    public CharacterInteractor provideCharacterInteractor(CharacterInteractor characterInteractor) {
-        return characterInteractor;
+    public CharacterInteractor provideCharacterInteractor(CharacterRepository characterRepository) {
+        return new CharacterInteractor(characterRepository);
     }
 
     @Provides
-    public CharacterPresentationMapper provideCharacterPresentationMapper(CharacterPresentationMapperImpl characterPresentationMapper){
-        return characterPresentationMapper;
+    public CharacterPresentationMapper provideCharacterPresentationMapper() {
+        return new CharacterPresentationMapperImpl();
     }
 }

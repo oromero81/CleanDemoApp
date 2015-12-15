@@ -13,7 +13,11 @@ import dagger.Provides;
  * Created by oromero on 03/03/15.
  */
 
-@Module(injects = CharacterFragment.class, includes = DomainModule.class, complete = false)
+@Module(
+        addsTo = AppModule.class,
+        library = true,
+        injects = CharacterFragment.class
+)
 public class CharacterModule {
 
     private CharacterPresenterView characterPresenterView;
