@@ -29,6 +29,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile "com.squareup.retrofit:retrofit:${libs.retrofitLibraryVersion}"
-
+    compile "com.squareup.retrofit:converter-gson:${libs.retrofitLibraryVersion}"
+    
     compile project(":domain")
 }

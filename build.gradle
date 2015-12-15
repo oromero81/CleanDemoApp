@@ -29,7 +29,7 @@ allprojects {
         libraries = [
                 butterKnifeVersion    : "6.0.0",
                 supportLibraryVersion : "23.1.0",
-                retrofitLibraryVersion: "1.8.0",
+                retrofitLibraryVersion: "2.0.0-beta2",
                 picassoLibraryVersion : "2.4.0",
                 daggerVersion         : "1.2.2",
                 eventbusVersion       : "2.4.0"

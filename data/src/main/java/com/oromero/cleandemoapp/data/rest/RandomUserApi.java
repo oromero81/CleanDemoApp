@@ -2,7 +2,7 @@ package com.oromero.cleandemoapp.data.rest;
 
 import com.oromero.cleandemoapp.data.model.ResponseDTO;
 
-import retrofit.Callback;
+import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
@@ -12,8 +12,8 @@ import retrofit.http.Query;
 public interface RandomUserApi {
 
     @GET("/0.4/")
-    public void getPeople(@Query("results") int results, Callback<ResponseDTO> callback);
+    Call<ResponseDTO> getPeople(@Query("results") int results);
 
     @GET("/0.4/")
-    public void getCharacter(@Query("seed") String id, Callback<ResponseDTO> callback);
+    Call<ResponseDTO> getCharacter(@Query("seed") String id);
 }

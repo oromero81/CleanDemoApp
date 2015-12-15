@@ -1,21 +1,27 @@
 package com.oromero.cleandemoapp.data.repository;
 
-import com.oromero.cleandemoapp.data.rest.UserRandomRest;
+import com.oromero.cleandemoapp.data.rest.UserRandomNetworkDataSource;
 import com.oromero.cleandemoapp.domain.repository.PeopleRepository;
+
+import java.io.IOException;
 
 /**
  * Created by oromero on 02/03/15.
  */
 public class PeopleRepositoryImpl implements PeopleRepository {
 
-    private UserRandomRest userRandomRest;
+    private UserRandomNetworkDataSource userRandomNetworkDataSource;
 
-    public PeopleRepositoryImpl(UserRandomRest userRandomRest) {
-        this.userRandomRest = userRandomRest;
+    public PeopleRepositoryImpl(UserRandomNetworkDataSource userRandomNetworkDataSource) {
+        this.userRandomNetworkDataSource = userRandomNetworkDataSource;
     }
 
     @Override
     public void getPeople() {
-        userRandomRest.getPeople();
+        try {
+            userRandomNetworkDataSource.getPeople();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
