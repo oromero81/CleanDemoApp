@@ -2,7 +2,7 @@ package com.oromero.cleandemoapp.di;
 
 import com.oromero.cleandemoapp.presentation.invoker.BackgroundInvoker;
 import com.oromero.cleandemoapp.presentation.invoker.BackgroundInvokerImpl;
-import com.oromero.cleandemoapp.presentation.invoker.Buzzer;
+import com.oromero.cleandemoapp.domain.interactor.Buzzer;
 import com.oromero.cleandemoapp.presentation.invoker.EventBusBuzzer;
 import com.oromero.cleandemoapp.presentation.invoker.TheExecutor;
 
@@ -21,8 +21,8 @@ import dagger.Provides;
 public class PresentationModule {
     @Provides
     @Singleton
-    public TheExecutor provideTheExecutor(BackgroundInvoker<Runnable> backgroundInvoker, Buzzer buzzer) {
-       return new TheExecutor(backgroundInvoker, buzzer);
+    public TheExecutor provideTheExecutor(BackgroundInvoker<Runnable> backgroundInvoker) {
+       return new TheExecutor(backgroundInvoker);
     }
 
     @Provides

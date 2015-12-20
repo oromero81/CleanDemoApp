@@ -6,18 +6,12 @@ package com.oromero.cleandemoapp.presentation.invoker;
 public class TheExecutor {
 
     private BackgroundInvoker executor;
-    private Buzzer buzzer;
 
-    public TheExecutor(BackgroundInvoker executor, Buzzer buzzer) {
+    public TheExecutor(BackgroundInvoker executor) {
         this.executor = executor;
-        this.buzzer = buzzer;
     }
 
     public void postOnBackgroundThread(Runnable runnable) {
         executor.run(runnable);
-    }
-
-    public void broadcastEvent(Object object) {
-        buzzer.broadcastEvent(object);
     }
 }
