@@ -1,6 +1,7 @@
 package com.oromero.cleandemoapp.di;
 
 
+import com.oromero.cleandemoapp.domain.interactor.Buzzer;
 import com.oromero.cleandemoapp.domain.interactor.CharacterInteractor;
 import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
 import com.oromero.cleandemoapp.domain.repository.CharacterRepository;
@@ -24,18 +25,18 @@ import dagger.Provides;
 public class DomainModule {
 
     @Provides
-    public PeopleInteractor providePeopleInteractor(PeopleRepository peopleRepository) {
-        return new PeopleInteractor(peopleRepository);
+    public PeopleInteractor providePeopleInteractor(Buzzer buzzer, PeopleRepository peopleRepository) {
+        return new PeopleInteractor(buzzer, peopleRepository);
     }
 
     @Provides
-    public PeoplePresentationMapper providePeoplePresentationMapper(){
+    public PeoplePresentationMapper providePeoplePresentationMapper() {
         return new PeoplePresentationMapperImpl();
     }
 
     @Provides
-    public CharacterInteractor provideCharacterInteractor(CharacterRepository characterRepository) {
-        return new CharacterInteractor(characterRepository);
+    public CharacterInteractor provideCharacterInteractor(Buzzer buzzer, CharacterRepository characterRepository) {
+        return new CharacterInteractor(buzzer, characterRepository);
     }
 
     @Provides

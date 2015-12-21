@@ -1,9 +1,11 @@
 package com.oromero.cleandemoapp.data.repository;
 
 import com.oromero.cleandemoapp.data.rest.UserRandomNetworkDataSource;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.domain.repository.PeopleRepository;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by oromero on 02/03/15.
@@ -17,11 +19,7 @@ public class PeopleRepositoryImpl implements PeopleRepository {
     }
 
     @Override
-    public void getPeople() {
-        try {
-            userRandomNetworkDataSource.getPeople();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public List<Character> getPeople() throws IOException {
+        return userRandomNetworkDataSource.getPeople();
     }
 }

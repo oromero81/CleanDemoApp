@@ -77,8 +77,25 @@ public class CharacterFragment extends BaseFragment implements CharacterPresente
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_character, container, false);
         ButterKnife.inject(this, rootView);
-        characterPresenter.getCharacter(id);
         return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        characterPresenter.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        characterPresenter.getCharacter(id);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        characterPresenter.onStop();
     }
 
     @Override

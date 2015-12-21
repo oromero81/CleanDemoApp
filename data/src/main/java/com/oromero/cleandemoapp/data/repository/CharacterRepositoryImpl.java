@@ -1,6 +1,7 @@
 package com.oromero.cleandemoapp.data.repository;
 
 import com.oromero.cleandemoapp.data.rest.UserRandomNetworkDataSource;
+import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.domain.repository.CharacterRepository;
 
 import java.io.IOException;
@@ -17,12 +18,8 @@ public class CharacterRepositoryImpl implements CharacterRepository {
     }
 
     @Override
-    public void getCharacter(String id) {
+    public Character getCharacter(String id) throws IOException {
         //TODO implement cache
-        try {
-            userRandomNetworkDataSource.getCharacter(id);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        return userRandomNetworkDataSource.getCharacter(id);
     }
 }

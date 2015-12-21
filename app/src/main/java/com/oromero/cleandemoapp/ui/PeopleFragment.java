@@ -56,11 +56,27 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
                 startActivity(intent);
             }
         });
-        peoplePresenter.populateList();
 
         return rootView;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        peoplePresenter.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        peoplePresenter.populateList();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        peoplePresenter.onStop();
+    }
     @Override
     protected List<Object> getModules() {
         return Arrays.<Object>asList(new PeopleModule(this));
