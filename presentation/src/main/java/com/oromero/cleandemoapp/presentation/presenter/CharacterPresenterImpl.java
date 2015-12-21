@@ -49,7 +49,7 @@ public class CharacterPresenterImpl implements CharacterPresenter {
         }
     }
 
-    public void onEvent(Character character) {
+    public void onEventMainThread(Character character) {
         CharacterPresentationModel presentationModel = characterPresentationMapper.transform(character);
         if (presentationModel != null) {
             characterPresenterView.drawCharacter(presentationModel);

@@ -1,6 +1,8 @@
 package com.oromero.cleandemoapp.di;
 
 import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
+import com.oromero.cleandemoapp.presentation.invoker.TheExecutor;
+import com.oromero.cleandemoapp.presentation.mapper.PeoplePresentationMapper;
 import com.oromero.cleandemoapp.presentation.presenter.PeoplePresenter;
 import com.oromero.cleandemoapp.presentation.presenter.PeoplePresenterImpl;
 import com.oromero.cleandemoapp.presentation.view.people.PeoplePresenterView;
@@ -27,8 +29,8 @@ public class PeopleModule {
     }
 
     @Provides
-    public PeoplePresenter providePeoplePresenter(PeopleInteractor peopleInteractor) {
-        return new PeoplePresenterImpl(presenterView, peopleInteractor);
+    public PeoplePresenter providePeoplePresenter(PeopleInteractor peopleInteractor, TheExecutor theExecutor, PeoplePresentationMapper peoplePresentationMapper) {
+        return new PeoplePresenterImpl(presenterView, peopleInteractor, theExecutor, peoplePresentationMapper);
     }
 
     @Provides

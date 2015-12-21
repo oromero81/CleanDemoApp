@@ -2,6 +2,7 @@ package com.oromero.cleandemoapp.presentation.presenter;
 
 import com.oromero.cleandemoapp.domain.entities.Character;
 import com.oromero.cleandemoapp.domain.interactor.PeopleInteractor;
+import com.oromero.cleandemoapp.presentation.invoker.TheExecutor;
 import com.oromero.cleandemoapp.presentation.mapper.PeoplePresentationMapper;
 import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
 import com.oromero.cleandemoapp.presentation.view.people.PeoplePresenterView;
@@ -17,16 +18,19 @@ public class PeoplePresenterImpl implements PeoplePresenter {
 
     private PeoplePresenterView peoplePresenterView;
     private PeopleInteractor peopleInteractor;
+    private TheExecutor theExecutor;
     private PeoplePresentationMapper peoplePresentationMapper;
 
-    public PeoplePresenterImpl(PeoplePresenterView peoplePresenterView, PeopleInteractor peopleInteractor) {
+    public PeoplePresenterImpl(PeoplePresenterView peoplePresenterView, PeopleInteractor peopleInteractor, TheExecutor theExecutor, PeoplePresentationMapper peoplePresentationMapper) {
         this.peoplePresenterView = peoplePresenterView;
         this.peopleInteractor = peopleInteractor;
+        this.theExecutor = theExecutor;
+        this.peoplePresentationMapper = peoplePresentationMapper;
     }
 
     @Override
     public void populateList() {
-        peopleInteractor.run();
+        theExecutor.postOnBackgroundThread(peopleInteractor);
         peoplePresenterView.loading();
     }
 
@@ -42,7 +46,7 @@ public class PeoplePresenterImpl implements PeoplePresenter {
         }
     }
 
-    public void onEvent(List<Character> characters) {
+    public void onEventMainThread(List<Character> characters) {
         List<PeoplePresentationModel> peoplePresentationModels = peoplePresentationMapper.transform(characters);
         if (peoplePresentationModels != null && !peoplePresentationModels.isEmpty()) {
             peoplePresenterView.drawList(peoplePresentationModels);
