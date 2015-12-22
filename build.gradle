@@ -32,7 +32,8 @@ allprojects {
                 retrofitLibraryVersion: "2.0.0-beta2",
                 picassoLibraryVersion : "2.4.0",
                 daggerVersion         : "1.2.2",
-                eventbusVersion       : "2.4.0"
+                eventbusVersion       : "2.4.0",
+                okHttpVersion         : "2.7.0"
         ]
     }
 

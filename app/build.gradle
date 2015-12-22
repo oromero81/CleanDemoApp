@@ -35,6 +35,8 @@ dependencies {
     compile "com.squareup.picasso:picasso:${libs.picassoLibraryVersion}"
     compile "com.squareup.dagger:dagger:${libs.daggerVersion}"
     provided "com.squareup.dagger:dagger-compiler:${libs.daggerVersion}"
+    compile "com.squareup.okhttp:okhttp:${libs.okHttpVersion}"
+    compile "com.squareup.okhttp:okhttp-urlconnection:${libs.okHttpVersion}"
 
     compile project(":domain")
     compile project(":data")
