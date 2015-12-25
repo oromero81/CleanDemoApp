@@ -9,6 +9,8 @@ import com.oromero.cleandemoapp.data.rest.UserRandomNetworkDataSource;
 import com.oromero.cleandemoapp.data.rest.UserRandomNetworkDataSourceImpl;
 import com.oromero.cleandemoapp.domain.repository.CharacterRepository;
 import com.oromero.cleandemoapp.domain.repository.PeopleRepository;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 
 import dagger.Module;
 import dagger.Provides;
@@ -27,9 +29,16 @@ public class DataModule {
 
     @Provides
     public RandomUserApi provideRandomUserApi() {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.HEADERS);
+
+        OkHttpClient httpClient = new OkHttpClient();
+        httpClient.interceptors().add(logging);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient)
                 .build();
 
         return retrofit.create(RandomUserApi.class);

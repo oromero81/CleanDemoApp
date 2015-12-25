@@ -30,6 +30,7 @@ dependencies {
 
     compile "com.squareup.retrofit:retrofit:${libs.retrofitLibraryVersion}"
     compile "com.squareup.retrofit:converter-gson:${libs.retrofitLibraryVersion}"
-    
+    compile "com.squareup.okhttp:logging-interceptor:${libs.okHttpVersion}"
+
     compile project(":domain")
 }
