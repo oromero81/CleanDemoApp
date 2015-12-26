@@ -8,8 +8,10 @@
 
     <ImageView
         android:id="@+id/photo_imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_width="@dimen/cell_people_image_size"
+        android:layout_height="@dimen/cell_people_image_size"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="wrap_content"
