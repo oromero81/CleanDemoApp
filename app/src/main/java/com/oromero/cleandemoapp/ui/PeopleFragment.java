@@ -2,11 +2,11 @@ package com.oromero.cleandemoapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.ViewFlipper;
 
 import com.oromero.cleandemoapp.R;
@@ -32,8 +32,8 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
     private static final int FLIPPER_LIST = 1;
     private static final int FLIPPER_NO_DATA = 2;
 
-    @InjectView(R.id.people_listView)
-    ListView people_listView;
+    @InjectView(R.id.people_list)
+    RecyclerView people_list;
     @InjectView(R.id.viewSwitcher)
     ViewFlipper viewFlipper;
     @Inject
@@ -44,13 +44,14 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_people, container, false);
-
         ButterKnife.inject(this, rootView);
-        people_listView.setAdapter(peopleAdapter);
-        people_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        people_list.setAdapter(peopleAdapter);
+        people_list.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        peopleAdapter.setListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                PeoplePresentationModel cell = ((PeoplePresentationModel) parent.getAdapter().getItem(position));
+            public void onClick(View view) {
+                int selectedPosition = people_list.getChildAdapterPosition(view);
+                PeoplePresentationModel cell = peopleAdapter.getPeopleSelected(selectedPosition);
                 Intent intent = new Intent(getActivity(), CharacterActivity.class);
                 intent.putExtra(CharacterActivity.EXTRA_ID, cell.getId());
                 startActivity(intent);
@@ -77,6 +78,7 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
         super.onStop();
         peoplePresenter.onStop();
     }
+
     @Override
     protected List<Object> getModules() {
         return Arrays.<Object>asList(new PeopleModule(this));

@@ -31,6 +31,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:${libs.supportLibraryVersion}"
+    compile "com.android.support:recyclerview-v7:${libs.supportLibraryVersion}"
     compile "com.jakewharton:butterknife:${libs.butterKnifeVersion}"
     compile "com.squareup.picasso:picasso:${libs.picassoLibraryVersion}"
     compile "com.squareup.dagger:dagger:${libs.daggerVersion}"

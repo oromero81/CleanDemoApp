@@ -1,9 +1,9 @@
 package com.oromero.cleandemoapp.ui;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
 import com.oromero.cleandemoapp.R;
 import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
@@ -11,27 +11,25 @@ import com.oromero.cleandemoapp.presentation.model.PeoplePresentationModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 /**
  * Created by oromero on 03/03/15.
  */
-public class PeopleAdapter extends BaseAdapter {
+public class PeopleAdapter extends RecyclerView.Adapter<PeopleViewHolder> {
 
     private List<PeoplePresentationModel> data = new ArrayList<>();
 
-    @Inject
-    public PeopleAdapter() {
+    private View.OnClickListener listener;
+
+    @Override
+    public PeopleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_people, parent, false);
+        PeopleViewHolder peopleViewHolder = new PeopleViewHolder(itemView, parent.getContext(), listener);
+        return peopleViewHolder;
     }
 
     @Override
-    public int getCount() {
-        return data.size();
-    }
-
-    @Override
-    public PeoplePresentationModel getItem(int position) {
-        return data.get(position);
+    public void onBindViewHolder(PeopleViewHolder holder, int position) {
+        holder.render(data.get(position));
     }
 
     @Override
@@ -40,23 +38,20 @@ public class PeopleAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        PeopleCell cell;
-
-        if (convertView == null || !(convertView instanceof PeopleCell)) {
-            cell = (PeopleCell) LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_people, parent, false);
-        } else {
-            cell = (PeopleCell) convertView;
-        }
-
-        cell.setCell(data.get(position));
-
-        return cell;
+    public int getItemCount() {
+        return data.size();
     }
 
     public void setData(List<PeoplePresentationModel> data) {
         this.data.addAll(data);
         notifyDataSetChanged();
+    }
+
+    public void setListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    public PeoplePresentationModel getPeopleSelected(int position) {
+        return data.get(position);
     }
 }
