@@ -20,8 +20,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by oromero on 02/03/15.
@@ -32,9 +32,9 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
     private static final int FLIPPER_LIST = 1;
     private static final int FLIPPER_NO_DATA = 2;
 
-    @InjectView(R.id.people_list)
+    @Bind(R.id.people_list)
     RecyclerView people_list;
-    @InjectView(R.id.viewSwitcher)
+    @Bind(R.id.viewSwitcher)
     ViewFlipper viewFlipper;
     @Inject
     PeoplePresenter peoplePresenter;
@@ -44,7 +44,7 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_people, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         people_list.setAdapter(peopleAdapter);
         people_list.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         peopleAdapter.setListener(new View.OnClickListener() {

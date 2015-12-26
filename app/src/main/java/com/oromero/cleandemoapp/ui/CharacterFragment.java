@@ -22,8 +22,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class CharacterFragment extends BaseFragment implements CharacterPresenterView {
 
@@ -32,25 +32,25 @@ public class CharacterFragment extends BaseFragment implements CharacterPresente
     private static final int FLIPPER_NO_DATA = 2;
     private static final String ARGS_ID = "args_id";
 
-    @InjectView(R.id.viewFlipper)
+    @Bind(R.id.viewFlipper)
     ViewFlipper viewFlipper;
-    @InjectView(R.id.photo_imageView)
+    @Bind(R.id.photo_imageView)
     ImageView photoImageView;
-    @InjectView(R.id.name_layout)
+    @Bind(R.id.name_layout)
     TitleWithDescriptionView nameLayout;
-    @InjectView(R.id.mail_layout)
+    @Bind(R.id.mail_layout)
     TitleWithDescriptionView mailLayout;
-    @InjectView(R.id.username_layout)
+    @Bind(R.id.username_layout)
     TitleWithDescriptionView usernameLayout;
-    @InjectView(R.id.password_layout)
+    @Bind(R.id.password_layout)
     TitleWithDescriptionView passwordLayout;
-    @InjectView(R.id.address_layout)
+    @Bind(R.id.address_layout)
     TitleWithDescriptionView addressLayout;
-    @InjectView(R.id.phone_layout)
+    @Bind(R.id.phone_layout)
     TitleWithDescriptionView phoneLayout;
-    @InjectView(R.id.cell_layout)
+    @Bind(R.id.cell_layout)
     TitleWithDescriptionView cellLayout;
-    @InjectView(R.id.birthday_layout)
+    @Bind(R.id.birthday_layout)
     TitleWithDescriptionView birthdayLayout;
 
     @Inject
@@ -76,7 +76,7 @@ public class CharacterFragment extends BaseFragment implements CharacterPresente
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_character, container, false);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 

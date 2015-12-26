@@ -9,17 +9,17 @@ import android.widget.TextView;
 
 import com.oromero.cleandemoapp.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by oromero on 03/03/15.
  */
 public class TitleWithDescriptionView extends LinearLayout {
 
-    @InjectView(R.id.title_textView)
+    @Bind(R.id.title_textView)
     TextView title_textView;
-    @InjectView(R.id.description_textView)
+    @Bind(R.id.description_textView)
     TextView description_textView;
 
     public TitleWithDescriptionView(Context context) {
@@ -40,7 +40,7 @@ public class TitleWithDescriptionView extends LinearLayout {
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rootView = inflater.inflate(R.layout.view_title_with_description, this, true);
-        ButterKnife.inject(this, rootView);
+        ButterKnife.bind(this, rootView);
     }
 
 
