@@ -3,6 +3,7 @@ package com.oromero.cleandemoapp.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,12 +33,12 @@ public class CharacterFragment extends BaseFragment implements CharacterPresente
     private static final int FLIPPER_NO_DATA = 2;
     private static final String ARGS_ID = "args_id";
 
+    @Bind(R.id.collapsingToolbar_layout)
+    CollapsingToolbarLayout collapsingToolbar_layout;
     @Bind(R.id.viewFlipper)
     ViewFlipper viewFlipper;
     @Bind(R.id.photo_imageView)
     ImageView photoImageView;
-    @Bind(R.id.name_layout)
-    TitleWithDescriptionView nameLayout;
     @Bind(R.id.mail_layout)
     TitleWithDescriptionView mailLayout;
     @Bind(R.id.username_layout)
@@ -106,11 +107,9 @@ public class CharacterFragment extends BaseFragment implements CharacterPresente
     @Override
     public void drawCharacter(CharacterPresentationModel presentationModel) {
         viewFlipper.setDisplayedChild(FLIPPER_CHARACTER);
+        collapsingToolbar_layout.setTitle(presentationModel.getName());
 
         Picasso.with(getActivity()).load(presentationModel.getImage()).placeholder(R.drawable.image_placeholder).into(photoImageView);
-
-        nameLayout.setTitle(getString(R.string.character_title_name));
-        nameLayout.setDescription(presentationModel.getName());
 
         mailLayout.setTitle(getString(R.string.character_title_mail));
         mailLayout.setDescription(presentationModel.getMail());

@@ -1,6 +1,6 @@
 package com.oromero.cleandemoapp.ui;
 
-import android.content.Intent;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -52,9 +52,12 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
             public void onClick(View view) {
                 int selectedPosition = people_list.getChildAdapterPosition(view);
                 PeoplePresentationModel cell = peopleAdapter.getPeopleSelected(selectedPosition);
-                Intent intent = new Intent(getActivity(), CharacterActivity.class);
-                intent.putExtra(CharacterActivity.EXTRA_ID, cell.getId());
-                startActivity(intent);
+
+                Fragment fragment = CharacterFragment.newInstance(cell.getId());
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
