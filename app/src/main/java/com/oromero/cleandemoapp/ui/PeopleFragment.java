@@ -1,9 +1,12 @@
 package com.oromero.cleandemoapp.ui;
 
 import android.app.Fragment;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +48,8 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_people, container, false);
         ButterKnife.bind(this, rootView);
+        setToolbar();
+        setActionBarTitle(getString(R.string.app_name));
         people_list.setAdapter(peopleAdapter);
         people_list.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         peopleAdapter.setListener(new View.OnClickListener() {
@@ -54,6 +59,15 @@ public class PeopleFragment extends BaseFragment implements PeoplePresenterView 
                 PeoplePresentationModel cell = peopleAdapter.getPeopleSelected(selectedPosition);
 
                 Fragment fragment = CharacterFragment.newInstance(cell.getId());
+
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Slide slideTransition = new Slide(Gravity.RIGHT);
+                    slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_M));
+
+                    fragment.setEnterTransition(slideTransition);
+                    fragment.setAllowEnterTransitionOverlap(false);
+                    fragment.setAllowReturnTransitionOverlap(false);
+                }
                 getFragmentManager().beginTransaction()
                         .replace(R.id.container, fragment)
                         .addToBackStack(null)

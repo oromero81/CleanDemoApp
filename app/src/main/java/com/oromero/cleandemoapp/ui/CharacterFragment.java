@@ -109,7 +109,7 @@ public class CharacterFragment extends BaseFragment implements CharacterPresente
         viewFlipper.setDisplayedChild(FLIPPER_CHARACTER);
         collapsingToolbar_layout.setTitle(presentationModel.getName());
 
-        Picasso.with(getActivity()).load(presentationModel.getImage()).placeholder(R.drawable.image_placeholder).into(photoImageView);
+        Picasso.with(getActivity()).load(presentationModel.getImage()).into(photoImageView);
 
         mailLayout.setTitle(getString(R.string.character_title_mail));
         mailLayout.setDescription(presentationModel.getMail());
