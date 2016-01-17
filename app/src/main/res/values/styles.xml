@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="BaseTheme"/>
+    <style name="AppTheme" parent="BaseTheme" />
 
     <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item> 
@@ -18,5 +18,18 @@
         <item name="android:paddingRight">@dimen/margin_padding_S</item>
         <item name="android:paddingTop">@dimen/margin_padding_XS</item>
         <item name="android:paddingBottom">@dimen/margin_padding_XS</item>
+    </style>
+
+    <style name="toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="layout_collapseMode">pin</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="toolbar.backgroundPrimary">
+        <item name="android:background">?attr/colorPrimary</item>
     </style>
 </resources>

@@ -3,9 +3,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
-        layout="@layout/toolbar"
-        android:background="?attr/colorPrimary" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/toolbar.backgroundPrimary" />
 
     <ViewFlipper
         android:id="@+id/viewSwitcher"
