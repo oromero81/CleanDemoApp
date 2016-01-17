@@ -9,6 +9,7 @@ Esta aplicación la he podido realizar gracias al trabajo previo de:
 * Saul Molinero (http://saulmm.github.io/)
 * Pedro Vicente Gomez (https://twitter.com/pedro_g_s - https://www.youtube.com/watch?v=ONziKX93iTM)
 * Antonio Leiva (http://antonioleiva.com/)
+
 Y algun repositorio y blog más.
 
 La capa de presentación utiliza el patrón Model - View - Presenter (http://www.limecreativelabs.com/mvp-android/)
