@@ -1,4 +1,6 @@
 # CleanDemoApp
+## @Deprecated  
+Consulta el repositorio https://github.com/oromero81/MovieApp
 
 Esta es una aplicación Android de demostración. Es mi aproximación a la Clean Arquitecture de Uncle Bob (https://twitter.com/unclebobmartin).
 Esta aplicación la he podido realizar gracias al trabajo previo de:
